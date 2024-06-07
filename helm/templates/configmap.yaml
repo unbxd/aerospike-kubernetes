@@ -28,9 +28,9 @@ metadata:
     release: {{ .Release.Name }}
 data:
   # default aerospike configuration file
-  {{ if .Files.Get "files/aerospike.template.conf" }}
-  aerospike.template.conf: {{ tpl (.Files.Get "files/aerospike.template.conf") . | quote }}
-  {{ end }}
+  # {{ if .Files.Get "files/aerospike.template.conf" }}
+  # aerospike.template.conf: {{ tpl (.Files.Get "files/aerospike.template.conf") . | quote }}
+  # {{ end }}
 
   {{- if and .Values.confFilePath .Values.aerospikeConfFile }}
   {{ fail "Both legacy(confFilePath) and new(aerospikeConfFile) are configured! Use only one!" }}
